@@ -20,7 +20,7 @@ import {Github} from '../../services/github';
 export class RepoBrowser {
 
   constructor(private router:Router, private github: Github) {}
-  
+
   searchForOrg(orgName: string){
     this.github.getOrg(orgName)
       .subscribe(({name}) => {
