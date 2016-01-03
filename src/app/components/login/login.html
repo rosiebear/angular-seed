@@ -1,4 +1,25 @@
-<h3>random user</h3>
-{{users | json}}
+
+<h1></h1>
+
+<form (ngSubmit)="login()">
+  <div class="form-group">
+    <label for="username">Username</label>
+    <input id="username" type="text" class="form-control" [(ngModel)]="model.username">
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input id="password" type="text" class="form-control" [(ngModel)]="model.password">
+  </div>
+  <button type="submit">Submit</button>
+</form>
+<p>{{userSession | json}}</p>
+
+<p *ngIf="userSession">{{userSession.user.username}}</p>
+
+<button (click)="logout()">Logout</button>
+
+<h3>Welcome</h3>
+
+{{randomUser | json}}
 
 <div><button (click)="getRandomUser()">Get User</button></div>
